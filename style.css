@@ -135,6 +135,7 @@ textarea.form-group__input {
 
 .checkbox__label {
   padding-left: 8px;
+  cursor: pointer;
 }
 
 
