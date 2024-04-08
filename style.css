@@ -14,6 +14,9 @@ body {
   background: black;
   display: flex;
   padding: 1em;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 .navbar__logo {
@@ -33,31 +36,162 @@ body {
 }
 
 .hero {
-  background: #999;
-  padding: 5%;
-}
-
-.main {
-  flex: 1 1 auto;
-  margin: auto;
-  max-width: 40em;
-  padding: 5%;
+  background: #ddd;
+  padding: 24px 5%;
+  margin-top: 56px;
 }
 
 .footer {
   background: #999;
-  padding: 5%;
+  padding: 24px 5%;
 }
 
 .form-group {
-  margin-bottom: 1em;
+  margin-bottom: 32px;
 }
 
 .form-group__label {
   display: block;
+  font-weight: 700;
+  padding-bottom: 8px;
 }
 
 .form-group__input {
-  display: block;
+  display: inline-block;
+  width: 95%;
+  height: 36px;
+  padding: 0 8px;
+}
+
+/* RL: My additional code starts here */
+.logo__link {
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 70px;
+}
+
+.hamburger {
+  padding: 4px;
+  cursor: pointer;
+  z-index: 999;
+  background: black;
+  border: 0;
+  color: white;
+}
+
+.closeIcon {
+  display: none;
+}
+
+.showMenu {
+  transform: translateY(0) !important;
+}
+
+.menu {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: black;
+  color: white;
+  list-style: none;
+  padding-top: 4rem;
+}
+
+.main {
+  padding: 40px 5%;
+}
+
+.form-group__div {
+  display: flex;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+.form-group__checkbox {
+  width: 32px;
+  height: 32px;
+}
+
+textarea.form-group__input {
+  padding: 8px;
+}
+
+.apply_button {
+  background-color: #008000;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  color: white;
+  font-size: 22px;
+  height: 56px;
   width: 100%;
+  margin-top: 16px;
+}
+
+.checkbox__label {
+  padding-left: 8px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .navbar__links {
+    flex-direction: column;
+  }
+
+  .navbar__link {
+    margin: 1em;
+    text-decoration: underline;
+    font-weight: 700;
+  }
+
+  .navbar__logo {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .main {
+    padding: 40px 25%;
+  }
+
+  .hero {
+    padding: 24px 25%;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .logo__link {
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .closeIcon {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    transform: none;
+    transition: none;
+    z-index: auto;
+    padding-top: 0;
+  }
+
+  .main {
+    padding: 40px 30%;
+  }
+  
+  .hero {
+    padding: 24px 30%;
+  }
 }
